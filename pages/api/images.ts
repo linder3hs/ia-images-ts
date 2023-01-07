@@ -17,7 +17,7 @@ export default async function handler(
   res: NextApiResponse<ImagesResponse | ImageError>
 ) {
   if (!configuration.apiKey) {
-    return res.status(500).json({
+    return res.status(401).json({
       message: "some error",
     });
   }

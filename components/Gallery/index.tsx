@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImagesResponse } from "openai";
 import styles from "../../styles/Home.module.css";
 
@@ -6,7 +7,6 @@ interface GalleryProps {
 }
 
 export default function Gallery({ images }: GalleryProps) {
-  console.log("images", images);
   return (
     <>
       <div className={styles.gallery}>
