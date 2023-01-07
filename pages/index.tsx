@@ -16,9 +16,14 @@ export default function Home() {
     setSearch("");
     setImages(null);
     setIsLoading(true);
-    const response = await fetch(`/api/images/?name=${search}`);
-    const data = await response.json();
-    setImages(data);
+
+    try {
+      const response = await fetch(`/api/images/?name=${search}`);
+      const data = await response.json();
+      setImages(data);
+    } catch (error) {
+      alert(error);
+    }
     setIsLoading(false);
   };
 
